@@ -1,11 +1,11 @@
 var express = require('express')
 const path = require('path')
-const { engine } = require('express-handlebars');
+var exphbs = require('express-handlebars');
  
 var app = express()
-const PORT = process.env.PORT || 3030;
+const PORT = process.env.PORT || 3000;
 
-app.engine('handlebars', engine());
+app.engine('handlebars', exphbs);
 app.set('view engine', 'handlebars');
 
 app.use(express.static(path.join(__dirname, "static")))
